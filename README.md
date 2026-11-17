@@ -459,4 +459,4 @@ pack and a prepared glass when one exists.
    earlier pack art ("With The Mother", "Energize. Metabolize."). Please confirm which label is
    current. If "With The Mother" is no longer on pack, the ingredients note should change. Also
    check that the label's "Antioxidants" wording is cleared, since the site copy itself makes no such claim.
-6. **Review permissions** for any XETAFIT / Flipkart / Amazon reviews.
+6. **Review permissions** for customer reviews sourced from the official XETAFIT store.

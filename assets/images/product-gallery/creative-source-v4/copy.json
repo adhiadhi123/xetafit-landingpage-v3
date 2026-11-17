@@ -1,0 +1,76 @@
+[
+  {
+    "title": "Your daily fizz.",
+    "copy": "Green apple + pomegranate.",
+    "detail": "15 effervescent tablets per tube.",
+    "scene": "stilllife.png",
+    "layout": "scene"
+  },
+  {
+    "title": "Good things.\nOne tablet.",
+    "lines": [
+      "ACV with the Mother",
+      "Vitamins B6 + B12",
+      "Green apple + pomegranate"
+    ],
+    "scene": "supplied-tablets.webp",
+    "layout": "formula"
+  },
+  {
+    "title": "Drop. Fizz.\nDrink.",
+    "copy": "Your refreshing daily ritual.",
+    "scene": "ritual.png",
+    "layout": "scene"
+  },
+  {
+    "title": "Feel-good\nfizz.",
+    "copy": "Digestive support.\nEveryday energy.",
+    "scene": "lifestyle.png",
+    "layout": "person"
+  },
+  {
+    "title": "Make room for\na daily ritual.",
+    "copy": "ACV. Fruit flavour. Refreshing fizz.",
+    "scene": "desk.png",
+    "layout": "scene"
+  },
+  {
+    "title": "A little\ndaily balance.",
+    "copy": "Simple, refreshing, easy to keep up.",
+    "scene": "outdoors.png",
+    "layout": "person"
+  },
+  {
+    "title": "Three essentials.\nOne easy ritual.",
+    "lines": [
+      "Apple cider vinegar",
+      "Pomegranate extract",
+      "Vitamins B6 + B12"
+    ],
+    "scene": "ingredients.png",
+    "layout": "formula"
+  },
+  {
+    "title": "Goodness,\nmade simple.",
+    "copy": "Gut health. Digestion.\nVitamins B6 + B12.",
+    "scene": "supplied-flatlay.webp",
+    "layout": "scene"
+  },
+  {
+    "title": "Pure formula.\nClean ingredients.",
+    "lines": [
+      "No added sugar",
+      "No maltodextrin",
+      "Soy & gluten free",
+      "No artificial colours or preservatives"
+    ],
+    "scene": "clean.png",
+    "layout": "formula clean"
+  },
+  {
+    "title": "B6 meets\npomegranate.",
+    "copy": "Everyday energy.\nAntioxidant support.",
+    "scene": "pomegranate.png",
+    "layout": "scene"
+  }
+]

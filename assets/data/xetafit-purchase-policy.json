@@ -1,0 +1,37 @@
+{
+  "checkedOn": "2026-11-17",
+  "sourceProductUrl": "https://xetafit.com/products/apple-cider-vinegar-effervescent-tablets-green-apple-pomegranate",
+  "shippingPolicyUrl": "https://xetafit.com/policies/shipping-policy",
+  "refundPolicyUrl": "https://xetafit.com/policies/refund-policy",
+  "packOf": 4,
+  "tablets": 60,
+  "variantId": null,
+  "price": null,
+  "returns": {
+    "windowDays": 7,
+    "unopenedOnly": true,
+    "sealIntact": true,
+    "completeMultiPackRequired": true,
+    "openedProductsReturnable": false,
+    "refundMode": "Store credit for eligible unopened returns; exceptions in policy",
+    "storeCreditReturnProcessingFeeINR": 100
+  },
+  "cod": {
+    "availableInSelectedLocations": true,
+    "source": "Product FAQ"
+  },
+  "delivery": {
+    "usualBusinessDays": [
+      5,
+      7
+    ],
+    "source": "Formal shipping policy",
+    "productFAQAlsoStates": [
+      3,
+      7
+    ],
+    "decision": "Use the dedicated shipping policy; location and courier may affect timing."
+  },
+  "shippingCharges": "Calculated at checkout; no fixed charge inferred from the announcement banner.",
+  "checkout": "Original official-product-page link preserved. Local quantity counts packs of 4 (60 tablets each) and is not transferred. Shopper is instructed to choose Pack of 4 and set quantity on the store. Quantity-aware cart requires a verified Pack of 4 variant ID; official product JSON could not be retrieved."
+}

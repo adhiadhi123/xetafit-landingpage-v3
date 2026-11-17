@@ -12,7 +12,7 @@ Only the hero carries bubbles. Each bubble is an <i> with its own:
   --o  peak opacity                               --w  sideways drift (px)
 css/animations.css (fizz-rise, fizz-drift) moves it.
 
-New bubbles per second = sum(1 / duration). The target is 10-20 per second;
+New bubbles per second = sum(1 / duration). The target is 18-22 per second;
 the stats line printed below reports the actual figure (and the mobile figure,
 where every third bubble is hidden).
 """
@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 
 SEED = 2611
-COUNT = 104
+COUNT = 136
 STREAMS = 5                 # loose chains from "nucleation points", 4 bubbles each
 SIZES = [                   # share, px range, opacity range, speed (cqh / s)
     (0.60, (4.0, 5.0), (0.82, 1.00), (5.5, 8.0)),     # small

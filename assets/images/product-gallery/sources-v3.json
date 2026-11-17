@@ -1,0 +1,113 @@
+{
+  "productMaster": "actual-product-official-v3.jpg",
+  "productMasterSha256": "8601cf6ad8dcb58c46fe6ddcc409a9633350bd7f23aecb6defb594c15e37c9ae",
+  "sourceUrl": "https://xetafit.com/cdn/shop/files/ACV_Single.jpg?v=1783543155&width=1500",
+  "productTreatment": "Original photograph, CSS background clipping and proportional scaling only; never submitted to image generation.",
+  "sceneryGeneration": "Built-in image_gen, 3 scenery-only assets, prompts in creative-source-v3",
+  "creatives": [
+    {
+      "file": "product-01-minimal-v3.png",
+      "copy": {
+        "title": "Your daily fizz.",
+        "copy": "Green apple + pomegranate.",
+        "detail": "15 effervescent tablets per tube.",
+        "scene": "stilllife",
+        "layout": "scene"
+      }
+    },
+    {
+      "file": "product-02-minimal-v3.png",
+      "copy": {
+        "title": "Good things.\nOne tablet.",
+        "lines": [
+          "ACV with the Mother",
+          "Vitamins B6 + B12",
+          "Green apple + pomegranate"
+        ],
+        "scene": "none",
+        "layout": "formula"
+      }
+    },
+    {
+      "file": "product-03-minimal-v3.png",
+      "copy": {
+        "title": "Drop. Fizz.\nDrink.",
+        "copy": "Your refreshing daily ritual.",
+        "scene": "ritual",
+        "layout": "scene"
+      }
+    },
+    {
+      "file": "product-04-minimal-v3.png",
+      "copy": {
+        "title": "Feel-good\nfizz.",
+        "copy": "Digestive support.\nEveryday energy.",
+        "scene": "lifestyle",
+        "layout": "person"
+      }
+    },
+    {
+      "file": "product-05-minimal-v3.png",
+      "copy": {
+        "title": "Make room for\na daily ritual.",
+        "copy": "ACV. Fruit flavour. Refreshing fizz.",
+        "scene": "stilllife",
+        "layout": "scene"
+      }
+    },
+    {
+      "file": "product-06-minimal-v3.png",
+      "copy": {
+        "title": "A little\ndaily balance.",
+        "copy": "Simple, refreshing, easy to keep up.",
+        "scene": "lifestyle",
+        "layout": "person"
+      }
+    },
+    {
+      "file": "product-07-minimal-v3.png",
+      "copy": {
+        "title": "Three essentials.\nOne easy ritual.",
+        "lines": [
+          "Apple cider vinegar",
+          "Pomegranate extract",
+          "Vitamins B6 + B12"
+        ],
+        "scene": "none",
+        "layout": "formula"
+      }
+    },
+    {
+      "file": "product-08-minimal-v3.png",
+      "copy": {
+        "title": "Goodness,\nmade simple.",
+        "copy": "Gut health. Digestion.\nVitamins B6 + B12.",
+        "scene": "ritual",
+        "layout": "scene"
+      }
+    },
+    {
+      "file": "product-09-minimal-v3.png",
+      "copy": {
+        "title": "Pure formula.\nClean ingredients.",
+        "lines": [
+          "No added sugar",
+          "No maltodextrin",
+          "Soy & gluten free",
+          "No artificial colours or preservatives"
+        ],
+        "scene": "none",
+        "layout": "formula clean"
+      }
+    },
+    {
+      "file": "product-10-minimal-v3.png",
+      "copy": {
+        "title": "B6 meets\npomegranate.",
+        "copy": "Everyday energy.\nAntioxidant support.",
+        "scene": "stilllife",
+        "layout": "scene"
+      }
+    }
+  ]
+}

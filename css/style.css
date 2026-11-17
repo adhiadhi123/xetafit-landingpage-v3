@@ -630,7 +630,7 @@ strong { font-weight: 700; }
   margin: -.08em -.14em -.1em;
 }
 .hero__title .intro-line { display: inline-block; }
-.hero__title em { font-size: 1.12em; padding-right: .04em; }
+.hero__title em { font-size: 1.12em; padding-right: .04em; color: #fff; }
 
 .hero__stage { flex: 1; display: grid; gap: 1.8rem; margin-top: 1.6rem; }
 .hero__copy { display: grid; gap: 1.2rem; justify-items: start; align-content: center; }
@@ -710,8 +710,8 @@ strong { font-weight: 700; }
 .hero__facts small { font-size: .42em; font-weight: 700; font-family: var(--f-sans); letter-spacing: .02em; color: var(--em); }
 .hero__facts span { font: 700 .62rem/1.3 var(--f-sans); letter-spacing: .12em; text-transform: uppercase; }
 
-/* Carbonation (hero only): rendered bubble sprites rising behind the content
-   (markup from tools/make_fizz.py, motion in animations.css) */
+/* Hero carbonation: glassy highlights at the original sprite diameters.
+   Markup from tools/make_fizz.py; motion in animations.css. */
 .fizz-field {
   position: absolute;
   z-index: 1;
@@ -727,11 +727,20 @@ strong { font-weight: 700; }
   width: var(--s);
   height: var(--s);
   margin-left: calc(var(--s) / -2);
-  background: url("../assets/images/bubble-1.webp") center / 100% 100% no-repeat;
+  box-sizing: border-box;
+  border: .7px solid rgba(255, 255, 255, .88);
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at var(--glint-x, 29%) 23%, #fff 0 7%, rgba(255, 255, 255, .85) 8%, transparent 24%),
+    radial-gradient(ellipse at 72% 78%, rgba(255, 255, 255, .8), transparent 33%),
+    radial-gradient(circle at 46% 42%, transparent 30%, rgba(var(--color-contrast-rgb), .22) 64%, rgba(255, 255, 255, .72) 89%);
+  box-shadow: inset .5px .5px 1px rgba(255, 255, 255, .8),
+              inset -.5px -1px 1px rgba(var(--color-contrast-rgb), .25),
+              0 .5px 1px rgba(var(--color-contrast-rgb), .24);
   opacity: 0;
 }
-.fizz-field .b2 { background-image: url("../assets/images/bubble-2.webp"); }
-.fizz-field .b3 { background-image: url("../assets/images/bubble-3.webp"); }
+.fizz-field .b2 { --glint-x: 36%; }
+.fizz-field .b3 { --glint-x: 24%; }
 
 /* Oversized serif marquee along the lower hero edge, behind the product */
 .marquee {
@@ -979,6 +988,7 @@ strong { font-weight: 700; }
 .life__photo .reveal { height: 100%; }
 .life__photo img { width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%; }
 .life__card {
+  --fg: var(--color-secondary);
   position: relative;
   z-index: 2;
   display: grid;

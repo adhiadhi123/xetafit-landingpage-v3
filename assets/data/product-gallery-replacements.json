@@ -1,0 +1,21 @@
+{
+  "status": "awaiting accessible original image files; retain current images until supplied",
+  "replacements": [
+    {
+      "position": 2,
+      "source": "New Image 1 - Everyday wellness support"
+    },
+    {
+      "position": 3,
+      "source": "New Image 2 - Key ingredients"
+    },
+    {
+      "position": 6,
+      "source": "New Image 3 - Nutritional information"
+    },
+    {
+      "position": 8,
+      "source": "New Image 4 - Things we skip"
+    }
+  ]
+}

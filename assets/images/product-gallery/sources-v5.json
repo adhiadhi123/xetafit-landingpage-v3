@@ -1,0 +1,129 @@
+{
+  "removedOriginalIndex": 5,
+  "count": 9,
+  "treatment": "Full photographic scenes; no pasted product cutouts. Original supplied photos 2 and 8 shown full frame with compact caption overlay.",
+  "creatives": [
+    {
+      "file": "product-01-minimal-v5.png",
+      "originalIndex": 1,
+      "scene": "../actual-product-official-v3.jpg",
+      "copy": {
+        "title": "Your daily fizz.",
+        "copy": "Green apple + pomegranate.",
+        "detail": "15 effervescent tablets per tube.",
+        "scene": "../actual-product-official-v3.jpg",
+        "layout": "original-photo",
+        "originalIndex": 1
+      }
+    },
+    {
+      "file": "product-02-minimal-v5.png",
+      "originalIndex": 2,
+      "scene": "supplied-tablets.webp",
+      "copy": {
+        "title": "Good things.\nOne tablet.",
+        "lines": [
+          "ACV with the Mother",
+          "Vitamins B6 + B12",
+          "Green apple + pomegranate"
+        ],
+        "scene": "supplied-tablets.webp",
+        "layout": "photo-overlay tablet-benefits",
+        "originalIndex": 2
+      }
+    },
+    {
+      "file": "product-03-minimal-v5.png",
+      "originalIndex": 3,
+      "scene": "ritual.png",
+      "copy": {
+        "title": "Drop. Fizz.\nDrink.",
+        "copy": "Your refreshing daily ritual.",
+        "scene": "ritual.png",
+        "layout": "preparation",
+        "originalIndex": 3
+      }
+    },
+    {
+      "file": "product-04-minimal-v5.png",
+      "originalIndex": 4,
+      "scene": "lifestyle.png",
+      "copy": {
+        "title": "Feel-good\nfizz.",
+        "copy": "Digestive support.\nEveryday energy.",
+        "scene": "lifestyle.png",
+        "layout": "person",
+        "originalIndex": 4
+      }
+    },
+    {
+      "file": "product-05-minimal-v5.png",
+      "originalIndex": 6,
+      "scene": "outdoors.png",
+      "copy": {
+        "title": "A little\ndaily balance.",
+        "copy": "Simple, refreshing, easy to keep up.",
+        "scene": "outdoors.png",
+        "layout": "person",
+        "originalIndex": 6
+      }
+    },
+    {
+      "file": "product-06-minimal-v5.png",
+      "originalIndex": 7,
+      "scene": "ingredients.png",
+      "copy": {
+        "title": "Three essentials.\nOne easy ritual.",
+        "lines": [
+          "Apple cider vinegar",
+          "Pomegranate extract",
+          "Vitamins B6 + B12"
+        ],
+        "scene": "ingredients.png",
+        "layout": "ingredients",
+        "originalIndex": 7
+      }
+    },
+    {
+      "file": "product-07-minimal-v5.png",
+      "originalIndex": 8,
+      "scene": "supplied-flatlay.webp",
+      "copy": {
+        "title": "Goodness,\nmade simple.",
+        "copy": "Gut health. Digestion.\nVitamins B6 + B12.",
+        "scene": "supplied-flatlay.webp",
+        "layout": "photo-overlay flatlay-benefits",
+        "originalIndex": 8
+      }
+    },
+    {
+      "file": "product-08-minimal-v5.png",
+      "originalIndex": 9,
+      "scene": "clean-kitchen.png",
+      "copy": {
+        "title": "Pure formula.\nClean ingredients.",
+        "lines": [
+          "No added sugar",
+          "No maltodextrin",
+          "Soy & gluten free",
+          "No artificial colours or preservatives"
+        ],
+        "scene": "clean-kitchen.png",
+        "layout": "natural-overlay clean",
+        "originalIndex": 9
+      }
+    },
+    {
+      "file": "product-09-minimal-v5.png",
+      "originalIndex": 10,
+      "scene": "morning-energy.png",
+      "copy": {
+        "title": "B6 meets\npomegranate.",
+        "copy": "Everyday energy.\nAntioxidant support.",
+        "scene": "morning-energy.png",
+        "layout": "natural-overlay energy",
+        "originalIndex": 10
+      }
+    }
+  ]
+}

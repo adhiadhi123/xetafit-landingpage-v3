@@ -1,0 +1,136 @@
+{
+  "version": "v4",
+  "content": "All approved v3 titles and body copy retained verbatim.",
+  "productMaster": "actual-product-official-v3.jpg",
+  "suppliedImages": {
+    "2.webp": "creative-source-v4/supplied-flatlay.webp",
+    "3.webp": "creative-source-v4/supplied-tablets.webp"
+  },
+  "sceneryGeneration": "Built-in image_gen; new scene prompts in creative-source-v4/*-prompt.txt",
+  "creatives": [
+    {
+      "file": "product-01-minimal-v4.png",
+      "scene": "stilllife.png",
+      "sceneSha256": "a84de42a41e665bc0058dd01e987dc33c6f3e6d050f45705002c5d8a00faba38",
+      "copy": {
+        "title": "Your daily fizz.",
+        "copy": "Green apple + pomegranate.",
+        "detail": "15 effervescent tablets per tube.",
+        "scene": "stilllife.png",
+        "layout": "scene"
+      }
+    },
+    {
+      "file": "product-02-minimal-v4.png",
+      "scene": "supplied-tablets.webp",
+      "sceneSha256": "a35f06b0d8b3715ad428258d8dc7e4c351bd63ff9ee53bf06ce4fed1677cb3dd",
+      "copy": {
+        "title": "Good things.\nOne tablet.",
+        "lines": [
+          "ACV with the Mother",
+          "Vitamins B6 + B12",
+          "Green apple + pomegranate"
+        ],
+        "scene": "supplied-tablets.webp",
+        "layout": "formula"
+      }
+    },
+    {
+      "file": "product-03-minimal-v4.png",
+      "scene": "ritual.png",
+      "sceneSha256": "6721af065813455162cd93b4f26b268aaf9e4f84b6b2c3c03ba78b70ef059e5b",
+      "copy": {
+        "title": "Drop. Fizz.\nDrink.",
+        "copy": "Your refreshing daily ritual.",
+        "scene": "ritual.png",
+        "layout": "scene"
+      }
+    },
+    {
+      "file": "product-04-minimal-v4.png",
+      "scene": "lifestyle.png",
+      "sceneSha256": "b3fec7a086312e61720799663de5164f47df701f283d40864bb2393f4a25b245",
+      "copy": {
+        "title": "Feel-good\nfizz.",
+        "copy": "Digestive support.\nEveryday energy.",
+        "scene": "lifestyle.png",
+        "layout": "person"
+      }
+    },
+    {
+      "file": "product-05-minimal-v4.png",
+      "scene": "desk.png",
+      "sceneSha256": "1fa3720eb6af02ca27e880c90d456cd8ac4c9344e14d54d4aa04d89eab6b1bfc",
+      "copy": {
+        "title": "Make room for\na daily ritual.",
+        "copy": "ACV. Fruit flavour. Refreshing fizz.",
+        "scene": "desk.png",
+        "layout": "scene"
+      }
+    },
+    {
+      "file": "product-06-minimal-v4.png",
+      "scene": "outdoors.png",
+      "sceneSha256": "58d0c83c6bb72e82d93b5160efc37b367c7c95a7090e6d522b7d2b44a4ef9c7b",
+      "copy": {
+        "title": "A little\ndaily balance.",
+        "copy": "Simple, refreshing, easy to keep up.",
+        "scene": "outdoors.png",
+        "layout": "person"
+      }
+    },
+    {
+      "file": "product-07-minimal-v4.png",
+      "scene": "ingredients.png",
+      "sceneSha256": "861b4915835e46189181e51bb18f9efb38ee0e30da05ff2574318f16fd546a27",
+      "copy": {
+        "title": "Three essentials.\nOne easy ritual.",
+        "lines": [
+          "Apple cider vinegar",
+          "Pomegranate extract",
+          "Vitamins B6 + B12"
+        ],
+        "scene": "ingredients.png",
+        "layout": "formula"
+      }
+    },
+    {
+      "file": "product-08-minimal-v4.png",
+      "scene": "supplied-flatlay.webp",
+      "sceneSha256": "e24bbf0832c7747ea09df8fefe52b70361eadae0c3f737fefb85edcd02ac52d5",
+      "copy": {
+        "title": "Goodness,\nmade simple.",
+        "copy": "Gut health. Digestion.\nVitamins B6 + B12.",
+        "scene": "supplied-flatlay.webp",
+        "layout": "scene"
+      }
+    },
+    {
+      "file": "product-09-minimal-v4.png",
+      "scene": "clean.png",
+      "sceneSha256": "7058de03acac6284066d36336326eb6615a9a198f2d1e9864eb9dd497dc92ed7",
+      "copy": {
+        "title": "Pure formula.\nClean ingredients.",
+        "lines": [
+          "No added sugar",
+          "No maltodextrin",
+          "Soy & gluten free",
+          "No artificial colours or preservatives"
+        ],
+        "scene": "clean.png",
+        "layout": "formula clean"
+      }
+    },
+    {
+      "file": "product-10-minimal-v4.png",
+      "scene": "pomegranate.png",
+      "sceneSha256": "8c5d0ccf044e2f013f94266c746f42f9b0d91d64a40c789f3e4ddee6e196d0bf",
+      "copy": {
+        "title": "B6 meets\npomegranate.",
+        "copy": "Everyday energy.\nAntioxidant support.",
+        "scene": "pomegranate.png",
+        "layout": "scene"
+      }
+    }
+  ]
+}

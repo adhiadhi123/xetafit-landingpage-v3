@@ -90,7 +90,7 @@
 @keyframes fizz-rise {
   0%   { opacity: 0; transform: translate3d(0, 0, 0) scale(.82); }
   9%   { opacity: var(--o); }
-  62%  { opacity: calc(var(--o) * .9); }
+  78%  { opacity: var(--o); }
   100% { opacity: 0; transform: translate3d(0, calc(var(--h) * -1), 0) scale(1); }
 }
 @keyframes fizz-drift { from { translate: calc(var(--w) * -1) 0; } to { translate: var(--w) 0; } }
@@ -163,7 +163,7 @@
   /* tablets elsewhere on the page drift a few pixels */
   .drift { animation: tab-drift 4.6s ease-in-out infinite alternate; }
 
-  /* hero carbonation: ~15 new bubbles a second, each on its own path and clock */
+  /* hero carbonation: ~20 new bubbles a second, each on its own path and clock */
   .hero .fizz-field { animation: enter-fade 1.6s var(--ease) .6s both; }
   .hero .fizz-field i {
     animation: fizz-rise var(--d) cubic-bezier(.4, .1, .75, .95) var(--t) infinite,
