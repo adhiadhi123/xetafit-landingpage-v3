@@ -77,6 +77,14 @@ green. Headline accents (`.h2 em`) are deep green on green and white surfaces an
 apple green on deep green. The green-and-white packaging, the logo and every
 photograph are never recoloured.
 
+**Purchase accent (the one exception).** The five purchase CTAs in `<main>` use
+*ember*, the only warm hue on the page, taken from the logo mark's orange
+(`#F45A1E`) and reserved for purchase so they are the first thing the eye finds.
+It lives only in `css/cta.css`: a fill gradient `#CC4510 → #BD3C0B → #A3320A`
+(white text 4.7:1 at the lightest stop, measured on the rendered fill) with the
+brighter logo orange used only for the glow outside the label. Nothing else on
+the page uses it.
+
 **Type.** DM Sans 800 capitals for headlines (tight tracking), with an italic
 Cormorant Garamond accent (`.h2 em`, apple green on deep green). Editorial panels use all-serif
 capitals (`.h2--serif`: Benefits, Lifestyle). Cormorant also sets product names,
@@ -100,11 +108,11 @@ purchase and white.)
 | 02 | The switch | deep-green panel | copy + apple-green check list; tilted tube on an apple-green stage with the white "old way" card |
 | 03 | Product + purchase | apple green | giant "Pack of 4 · 60 Tablets" lettering behind one large white container: pack image left, purchase column right |
 | 04 | How it works | apple green | three white cards with the photographed drop / fizz / sip stages and dark number badges |
-| 05 | Benefits | deep-green panel | tube centred, six benefits with apple-green serif numerals either side, apple-green CTA |
+| 05 | Benefits | deep-green panel | tube centred, six benefits with apple-green serif numerals either side, ember CTA |
 | 06 | Ingredients | white panel | tube on a green stage with "500 mg" lettering; "Per tablet" facts label with the sodium notice |
 | 07 | Lifestyle | apple green | full campaign photograph with a deep-green card overlapping its lower left |
 | 08 | Comparison | deep-green panel | white card (liquid ACV) vs apple-green card (XETAFIT), matching cream-studio photographs, apple-green "vs" disc |
-| 09 | Reviews | apple green | four white placeholder cards (verified reviews only), deep-green CTA |
+| 09 | Reviews | apple green | four white placeholder cards (verified reviews only), ember CTA |
 | 10 | Quality | deep-green panel | certificate preview on a paper stack + batch details, View certificate |
 | 11 | FAQ | white panel | heading + always-visible deep-green safety card; native `<details>` list with hairline dividers |
 | 12 | Final | apple green | deep-green card: headline, Buy now, four-pack photograph breaking out of the card top |
@@ -121,13 +129,21 @@ Opening it does not move the page.
 
 **Buttons.** Compact capsules with a small arrow, 42 px (50 px for `.btn--lg`):
 `.btn--gold` purchase, `.btn--cream` information, `.btn--ghost` outline.
-Purchase buttons are deep green with white text on apple-green and white
-surfaces, and apple green with deep-green text on deep green (a deep-green button
-would disappear there). Hover and keyboard focus change the colour over 0.24 s:
-to apple green on white surfaces, to white on apple-green and deep-green surfaces
-(a white button on apple green turns deep green). The button lifts 1 px and the
-arrow moves 3 px. The disabled Add to cart is a muted grey-green with a
-not-allowed cursor.
+Purchase buttons in `<main>` (01 Buy now, 03 Buy now, 05 and 09 Get your 4-pack,
+12 Buy now) are ember pills with white text on every surface (`css/cta.css`): a
+glossy top edge, a soft logo-orange glow (plus a deep-green ground shadow on light
+surfaces), and a glass shine: one narrow beam of light, tilted 15°, crosses the pill
+left to right every 2.8 s (about 0.76 s of travel, then about 2 s of rest; first pass
+1.6 s after load, as the hero CTA settles). The beam sits under the label and arrow,
+is clipped to the pill, and animates only `transform`. Hover and keyboard focus slide the fill to
+its richer end and bloom the glow (with a white halo on apple green, ember elsewhere);
+press settles it with an inset shadow. Focus adds a 3 px ring, deep green on apple
+green and white and white on deep green. The pills stay in place (no lift), as
+`nav-liquid.css` keeps every CTA stationary for its water effect; the arrow still
+moves 3 px. Reduced motion removes the shine and the fill slide. The header and menu
+**Product** links are navigation and keep their own styles. Other buttons hover
+to apple green on white surfaces and to white on apple-green and deep-green
+surfaces (a white button on apple green turns deep green).
 
 ## 4. Motion (CSS only)
 
