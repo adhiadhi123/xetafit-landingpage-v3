@@ -1,12 +1,17 @@
 {
-  "checkedOn": "2026-11-17",
+  "checkedOn": "2026-11-18",
   "sourceProductUrl": "https://xetafit.com/products/apple-cider-vinegar-effervescent-tablets-green-apple-pomegranate",
   "shippingPolicyUrl": "https://xetafit.com/policies/shipping-policy",
   "refundPolicyUrl": "https://xetafit.com/policies/refund-policy",
   "packOf": 4,
   "tablets": 60,
-  "variantId": null,
-  "price": null,
+  "variantId": 52622247067960,
+  "price": {
+    "currency": "INR",
+    "sale": 999,
+    "regular": 1599,
+    "source": "Official store product data (collections/all/products.json), checked 2026-11-18"
+  },
   "returns": {
     "windowDays": 7,
     "unopenedOnly": true,
@@ -32,6 +37,13 @@
     ],
     "decision": "Use the dedicated shipping policy; location and courier may affect timing."
   },
-  "shippingCharges": "Calculated at checkout; no fixed charge inferred from the announcement banner.",
-  "checkout": "Original official-product-page link preserved. Local quantity counts packs of 4 (60 tablets each) and is not transferred. Shopper is instructed to choose Pack of 4 and set quantity on the store. Quantity-aware cart requires a verified Pack of 4 variant ID; official product JSON could not be retrieved."
+  "shippingCharges": "None stated: store banner offers free shipping across India.",
+  "checkout": "Buy now opens the official product page with the Pack of 4 variant preselected (?variant=52622247067960). The local quantity is not transferred.",
+  "sku": "XF_ACVGRNAPL_4Pc",
+  "freeDelivery": {
+    "claim": "Free shipping across India",
+    "source": "Store-wide banner \"FREE SHIPPING ACROSS INDIA\"; shipping policy states no charges, minimum or exclusions"
+  },
+  "fssaiLicence": "10715002000175",
+  "directions": "Drop 1 tablet in a glass of water (200-250 ml). Drink once the fizz settles. Up to 2 tablets a day."
 }

@@ -630,7 +630,7 @@ strong { font-weight: 700; }
   margin: -.08em -.14em -.1em;
 }
 .hero__title .intro-line { display: inline-block; }
-.hero__title em { font-size: 1.12em; padding-right: .04em; color: #fff; }
+.hero__title em { font-size: 1.12em; padding-right: .04em; color: rgba(255, 255, 255, .85); }   /* softened white: alpha, not opacity, so the line-up entrance is untouched */
 
 .hero__stage { flex: 1; display: grid; gap: 1.8rem; margin-top: 1.6rem; }
 .hero__copy { display: grid; gap: 1.2rem; justify-items: start; align-content: center; }
@@ -645,7 +645,12 @@ strong { font-weight: 700; }
   border-radius: 999px;
   font: 600 .8rem/1.2 var(--f-sans);
 }
-.hero__cta { margin-top: .4rem; }
+.hero__cta { margin-top: 0rem; }
+/* Hero only: "Pack of 4 — 60 tablets" sits under Buy now, left-aligned, 12px below it */
+.hero__cta.cta-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+/* Hero only: Buy now 56px tall and ~202px wide (28% wider than 158px); same label size.
+   Equal side padding: at this width the label + arrow ink is centred to within 1px */
+.hero__cta .btn--lg { height: 56px; padding: 0 54px; }
 
 .hero__art {
   position: relative;
@@ -762,7 +767,7 @@ strong { font-weight: 700; }
   letter-spacing: -.015em;
   text-transform: uppercase;
   white-space: nowrap;
-  color: #fff;
+  color: rgba(255, 255, 255, .55);   /* decorative: recedes behind the headline and CTA (alpha, since enter-fade ends at opacity 1) */
 }
 
 /* 8. 02 THE SWITCH ========================================================= */

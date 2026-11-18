@@ -1,0 +1,54 @@
+/* 04 How it works: oversized "Fizz. Sip. Repeat." lettering behind the three steps.
+   Visual reference: the hero marquee (style.css .marquee), which is left untouched.
+   Scroll-linked, never looping: scrolling down moves it right-to-left, scrolling up
+   reverses it, and it rests wherever the scroll rests. Decorative only (aria-hidden,
+   no pointer events). The band sits absolutely on the lower edge of the cards, so it
+   adds no height; its upper third tucks behind the cards and the rest shows in the
+   green space below them. Fallback for browsers without scroll-driven animations:
+   how-marquee.js (same mapping). */
+.how-marquee {
+  --how-type: clamp(76px, 12.5vw, 184px);   /* hero marquee scale */
+  --how-travel: clamp(200px, 26vw, 380px);   /* horizontal travel over the passage */
+  --how-note: 22px;                          /* height of the note under the cards (one line) */
+  position: absolute;
+  z-index: -1;                               /* behind heading, cards and note (.sec isolates) */
+  inset-inline: 0;
+  /* card bottom = section padding + note margin + note; the band rises a third above it */
+  bottom: calc(var(--pad-y) + clamp(28px, 4vw, 44px) + var(--how-note) - var(--how-type) * .55);
+  height: calc(var(--how-type) * .84);
+  overflow: clip;                            /* clip, not hidden: no scroll container, view() keeps working */
+  pointer-events: none;
+  user-select: none;
+}
+.how-marquee__track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  margin-left: -.42em;                       /* opens mid-word, like a running band */
+  font: 600 var(--how-type)/.84 var(--f-serif);
+  letter-spacing: -.015em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, .2);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+.how-marquee__track span { flex: none; padding-right: .3em; }
+@media (max-width: 485.98px) { .how-marquee { --how-note: 44px; } }   /* the note wraps to two lines */
+
+@keyframes how-marquee-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(calc(-1 * var(--how-travel)), 0, 0); }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .how-marquee__track {
+      animation: how-marquee-scroll linear both;
+      animation-timeline: view();             /* the band's own passage through the viewport */
+      animation-range: cover 0% cover 100%;   /* enters at 0, leaves at -travel: no jumps */
+    }
+  }
+}
+
+@media print { .how-marquee { display: none; } }

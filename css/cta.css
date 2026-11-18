@@ -1,0 +1,142 @@
+/* ==========================================================================
+   XETAFIT — cta.css
+   Primary purchase CTAs only: every .btn--gold inside <main>
+   (01 Hero "Buy now", 03 Product "Buy now", 05 Benefits "Get your 4-pack",
+   09 Reviews "Get your 4-pack", 12 Final "Buy now").
+
+   Ember is the one warm hue on the page, taken from the orange of the logo mark
+   (#F45A1E) and reserved for purchase, so the eye lands there first on the
+   apple-green, white and deep-green surfaces alike. The fill is deepened until
+   white text clears WCAG AA at every gradient stop; the brighter logo orange is
+   used only for the glow outside the label.
+
+   Size, padding, type, copy and links are untouched (they come from .btn and
+   .btn--lg). The header and menu "Product" links are navigation, not purchase
+   CTAs, and keep their styles. Loaded last.
+   ========================================================================== */
+
+main .btn--gold {
+  --ember-1: #CC4510;                 /* lightest stop   white text 4.7:1 */
+  --ember-2: #BD3C0B;                 /* body            white text 5.4:1 */
+  --ember-3: #A3320A;                 /* deep edge       white text 6.9:1 */
+  --ember-glow: 244, 90, 30;          /* logo orange, outside the label only */
+  --cta-ring: var(--color-contrast);  /* focus ring, set per surface below */
+  --cta-ground: 0 1px 2px rgba(var(--color-contrast-rgb), .28),
+                0 12px 24px -14px rgba(var(--color-contrast-rgb), .6);
+  --cta-glow: 0 10px 26px -10px rgba(var(--ember-glow), .62);
+  /* on apple green an orange halo turns olive, so the hover halo is white light */
+  --cta-glow-hover: 0 14px 32px -10px rgba(var(--ember-glow), .7), 0 0 0 4px rgba(255, 255, 255, .34);
+
+  /* Shared .btn variables: white label in every state. A non-white --b-hover
+     makes nav-liquid.js draw white glints for the hover water effect. */
+  --b-fg: #fff;
+  --b-hover: var(--ember-2);
+  --b-hover-fg: #fff;
+  --b-line: rgba(255, 196, 160, .34);
+
+  position: relative;                 /* the sheen layer stays inside the pill */
+  isolation: isolate;                 /* ... and behind the label (z-index -1) */
+  overflow: hidden;
+  background-color: var(--ember-2);
+  background-image:
+    radial-gradient(120% 100% at 50% -12%, rgba(255, 168, 112, .26), transparent 60%),
+    linear-gradient(110deg, var(--ember-1) 0%, var(--ember-2) 48%, var(--ember-3) 100%);
+  background-size: 100% 100%, 180% 100%;
+  background-position: 0 0, 0% 50%;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 222, 196, .34),
+    inset 0 -1px 0 rgba(84, 22, 0, .24),
+    var(--cta-ground),
+    var(--cta-glow);
+  transition: background-position .6s var(--ease), box-shadow .35s var(--ease),
+              border-color var(--dur-hover) var(--ease), color var(--dur-hover) var(--ease);
+}
+
+/* Hover and keyboard focus: the fill slides to its richer end and the glow blooms.
+   The pill itself stays put (nav-liquid.css keeps CTAs stationary). */
+main .btn--gold:is(:hover, :focus-visible) {
+  --b-line: rgba(255, 208, 180, .62);
+  background-position: 0 0, 100% 50%;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 222, 196, .42),
+    inset 0 -1px 0 rgba(84, 22, 0, .24),
+    var(--cta-ground),
+    var(--cta-glow-hover);
+}
+
+/* Press: settles into the surface. */
+main .btn--gold:active {
+  background-position: 0 0, 100% 50%;
+  box-shadow:
+    inset 0 2px 7px rgba(70, 18, 0, .42),
+    0 4px 12px -8px rgba(var(--ember-glow), .7);
+  transition-duration: .08s;
+}
+
+main .btn--gold:focus-visible {
+  outline: 3px solid var(--cta-ring);
+  outline-offset: 4px;
+}
+
+/* Glass shine: one narrow beam of light, tilted 15deg, crosses the pill from
+   left to right every 2.8 s (about 0.76 s of travel, then about 2 s of rest).
+   The layer covers the pill and the beam is drawn at its centre with a fixed width,
+   so it is equally narrow on every button and travels from just outside the left
+   edge to just outside the right. It sits under the label and arrow (z-index -1
+   inside the isolated pill), the pill's overflow clips it to the rounded shape, and
+   only transform animates, so it runs on the compositor without repainting. */
+main .btn--gold::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(105deg,
+    transparent calc(50% - 30px),
+    rgba(255, 255, 255, .05) calc(50% - 20px),
+    rgba(255, 246, 238, .13) calc(50% - 9px),
+    rgba(255, 255, 255, .24) 50%,
+    rgba(255, 246, 238, .13) calc(50% + 9px),
+    rgba(255, 255, 255, .05) calc(50% + 20px),
+    transparent calc(50% + 30px));
+  transform: translateX(calc(-50% - 40px));
+  pointer-events: none;
+  animation: cta-shine 2.8s linear 1.6s infinite;   /* first pass as the hero CTA settles */
+}
+@keyframes cta-shine {
+  0% { transform: translateX(calc(-50% - 40px)); animation-timing-function: cubic-bezier(.37, 0, .63, 1); }
+  27%, 100% { transform: translateX(calc(50% + 40px)); }
+}
+
+/* Surfaces ---------------------------------------------------------------
+   Apple green (01 Hero): the default above. A deep-green ground shadow lifts the
+   pill off the green; the ring is deep green (5.9:1 on apple green). */
+
+/* White (03 Product card): a warm glow is enough; a lighter ground shadow and an
+   ember hover halo (white would not show). */
+main .buy-card .btn--gold {
+  --cta-ground: 0 1px 2px rgba(var(--color-contrast-rgb), .18),
+                0 12px 22px -16px rgba(var(--color-contrast-rgb), .45);
+  --cta-glow-hover: 0 14px 34px -10px rgba(var(--ember-glow), .82), 0 0 0 4px rgba(var(--ember-glow), .16);
+}
+
+/* Deep green (05 Benefits, 09 Reviews, 12 Final): the green ground shadow would
+   vanish here, so the glow carries the separation; white ring (12:1). */
+main :is(.panel--burgundy, #reviews, .final-card) .btn--gold {
+  --cta-ring: var(--color-secondary);
+  --cta-ground: 0 1px 2px rgba(0, 0, 0, .3);
+  --cta-glow: 0 10px 30px -8px rgba(var(--ember-glow), .55), 0 0 0 1px rgba(var(--ember-glow), .2);
+  --cta-glow-hover: 0 14px 38px -8px rgba(var(--ember-glow), .78), 0 0 0 5px rgba(var(--ember-glow), .18);
+}
+/* 09 Reviews wrapped its old deep-green button in a white pill; with one CTA look
+   site-wide the pill goes (its padding stays, so nothing moves). */
+#reviews .reviews__cta { background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  main .btn--gold { transition: box-shadow .2s linear, border-color .2s linear; }
+  main .btn--gold::after { display: none; }
+}
+
+@media (forced-colors: active) {
+  main .btn--gold { border-color: ButtonText; }
+  main .btn--gold::after { display: none; }
+}
