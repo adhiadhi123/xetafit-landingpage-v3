@@ -417,8 +417,8 @@
 #reviews .feedback-card__rating-label strong { color:#173d2b; font-size:.72rem; font-weight:700; font-variant-numeric:tabular-nums; }
 /* Product corrections: benefit highlights, verified price, four shopping assurances, FSSAI fact. */
 #buy .buy-highlights { list-style:none; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:0; padding:0; }
-#buy .buy-highlights li { display:flex; align-items:center; gap:8px; min-width:0; padding:8px 12px; border:1px solid var(--color-contrast-line); border-radius:12px; color:var(--color-contrast); font:600 .74rem/1.35 var(--f-sans); }
-#buy .buy-highlights svg { flex:none; width:17px; height:17px; color:#628c1e; }
+#buy .buy-highlights li { display:flex; align-items:center; gap:8px; min-width:0; padding:8px 12px; border:1px solid #e9a675; border-radius:12px; background:#fff0df; color:var(--color-contrast); font:600 .74rem/1.35 var(--f-sans); }
+#buy .buy-highlights svg { flex:none; width:17px; height:17px; color:#b54c12; }
 #buy .buy-price { display:flex; flex-wrap:wrap; align-items:center; gap:6px 12px; }
 #buy .buy-price p { margin:0; }
 #buy .buy-price__now { color:var(--color-contrast); font:800 clamp(1.7rem,2.6vw,2rem)/1 var(--f-sans); letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
