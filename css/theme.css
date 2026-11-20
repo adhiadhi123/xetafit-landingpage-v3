@@ -1,0 +1,374 @@
+/* ==========================================================================
+   XETAFIT — theme.css
+   Forest theme for the landing page. Linked from index.html only (the
+   certificate page keeps the original palette) and loaded last.
+
+   Colour and light only: layout, spacing, type, content, images and the
+   purchase CTA fill are untouched. The surface system in style.css is kept:
+   each surface sets --fg / --head / --em / --soft / --line / --focus plus
+   the accent and button variables, and every component reads those.
+
+   Palette
+     --forest     #032F24  page and hero; text and small cards on light surfaces
+     --emerald    #07583E  raised dark panels, gradients
+     --botanical  #0E7049  reflected light, soft highlights
+     --ivory      #F7F4EA  text on dark; light panels and cards
+     --lime       #A9DE54  accents only: headline accents, numerals, ticks
+
+   Contrast (WCAG): ivory on forest 13.3:1, lime on forest 9.2:1, ivory on
+   emerald 7.7:1, lime on emerald 5.4:1, forest on ivory 13.3:1.
+
+   Rhythm: forest open sections (01, 03, 04, 07, 12) · emerald panels in two
+   tones, alternating so neighbours separate (02 A, 05 B, 08 A, 09 B, 10 A,
+   final card A, footer B) · ivory panels (06, 11).
+   ========================================================================== */
+
+:root {
+  --forest: #032F24;
+  --emerald: #07583E;
+  --botanical: #0E7049;
+  --ivory: #F7F4EA;
+  --lime: #A9DE54;
+  --ivory-rgb: 247, 244, 234;
+  --lime-rgb: 169, 222, 84;
+
+  /* The palette tokens every component reads (style.css section 1) */
+  --color-primary: var(--lime);
+  --color-secondary: var(--ivory);
+  --color-contrast: var(--forest);
+  --color-contrast-rgb: 3, 47, 36;
+  --type-ghost: rgba(255, 255, 255, .26);     /* 12 Final background lettering */
+
+  /* Emerald surface for the mobile menu. */
+  --panel-a:
+    radial-gradient(90% 55% at 88% 0%, rgba(14, 112, 73, .5), rgba(14, 112, 73, 0) 100%),
+    linear-gradient(180deg, #07583E 0%, #064C36 55%, #05432F 100%);
+  /* Header capsules: a lifted, translucent emerald that reads on forest and ivory */
+  --capsule: rgba(10, 78, 57, .88);
+}
+
+/* Page background (style.css sets --page-green on the same selector) */
+html:has(body:not(.cert-page)) { --page-green: var(--forest); }
+
+/* ---- Surfaces ---------------------------------------------------------------- */
+
+/* Open sections now sit on deep forest: ivory text, lime accents. A non-ember
+   button hovers to pure white, so nav-liquid.js keeps drawing lime water on it. */
+.sec {
+  --fg: var(--ivory);
+  --head: var(--ivory);
+  --em: var(--lime);
+  --soft: rgba(var(--ivory-rgb), .8);
+  --line: rgba(var(--ivory-rgb), .2);
+  --focus: var(--ivory);
+  --fg-rgb: var(--ivory-rgb);
+  --accent: var(--lime);
+  --on-accent: var(--forest);
+  --cta-bg: var(--lime);
+  --cta-fg: var(--forest);
+  --cta-hover: #fff;
+  --alt-hover: var(--lime);
+  --alt-hover-fg: var(--forest);
+}
+.panel--burgundy, .menu, .life__card, .final-card, .safety, .site-footer { --cta-hover: #fff; }
+
+/* Raised dark panels */
+.menu { background: var(--panel-a); }
+.site-footer {
+  --fg: #173D2B;
+  --focus: var(--fg);
+  background: #fff;
+}
+.site-footer__links a {
+  background-color: rgba(23, 61, 43, .07);
+}
+.site-footer__links a:hover {
+  background-color: rgba(23, 61, 43, .14);
+}
+.site-footer .site-footer__policies a,
+.site-footer__small { color: var(--fg); }
+.site-footer__small { border-color: rgba(23, 61, 43, .16); }
+/* Let the section surface show through the existing content and image wrappers. */
+#switch .panel--burgundy,
+#compare .panel--burgundy,
+#quality .panel--burgundy,
+#quality .quality-care__frame,
+#buy .product-gallery__track,
+#buy .product-slide__art,
+#lifestyle .lifestyle-editorial__gallery figure,
+#final .final__photo,
+#final .final-card {
+  background: transparent;
+}
+#final .final-card { box-shadow: none; }
+
+#faq .safety {
+  --fg: var(--forest);
+  background: transparent;
+}
+#faq .safety li::before { background: var(--emerald); }
+.site-footer__brand { background: var(--forest); }   /* Keep the original logo legible on white. */
+
+
+/* Full-width section colors with the existing content wrappers and panel radii. */
+#buy, #benefits, #benefits .panel--burgundy, #lifestyle,
+#reviews.reviews, #faq, #faq .panel--cream {
+  --fg: var(--forest);
+  --head: var(--forest);
+  --em: var(--emerald);
+  --soft: var(--color-contrast-muted);
+  --line: rgba(var(--color-contrast-rgb), .16);
+  --focus: var(--forest);
+  --fg-rgb: var(--color-contrast-rgb);
+  --accent: var(--emerald);
+  --on-accent: #fff;
+  background: #fff;
+}
+
+#buy, #benefits, #lifestyle, #reviews.reviews, #faq {
+  border-radius: var(--r-panel);
+}
+
+#how, #ingredients.ingredients-compact, #compare, #quality, #final {
+  background: var(--forest);
+}
+
+#buy {
+  --type-ghost: rgba(var(--color-contrast-rgb), .07);
+}
+#buy .buy-card {
+  background: #fff;
+  box-shadow: none;
+}
+@media (min-width: 760px) {
+  #buy .buy-card { column-gap: clamp(32px, 3vw, 48px); }
+  #buy .buy-card__body { padding-inline: 12px 0; }
+}
+
+#benefits .benefit-item {
+  border-color: var(--line);
+  background: transparent;
+}
+#benefits .benefit-item:hover {
+  border-color: var(--emerald);
+  background: rgba(var(--color-contrast-rgb), .05);
+}
+#benefits .benefit-item__number,
+#benefits .benefit-item:hover h3 { color: var(--emerald); }
+
+#ingredients.ingredients-compact { color: var(--fg); }
+#ingredients.ingredients-compact::before { background: var(--forest); }
+#ingredients .ingredient-compact__highlights { border-color: var(--line); }
+
+/* ---- Header -------------------------------------------------------------------- */
+/* A faint glass hairline keeps every capsule distinct where the light passes behind it */
+.hdr__brand, .hdr__nav ul, .hdr__icon, .hdr__menu {
+  background: var(--capsule);
+  box-shadow: 0 10px 26px -16px rgba(0, 0, 0, .6), inset 0 0 0 1px rgba(255, 255, 255, .08);
+}
+.hdr__brand:hover { background: rgba(14, 112, 73, .95); }
+
+/* ---- 01 Hero ------------------------------------------------------------------ */
+/* A lit stage in deep forest, as in the reference: a deep, pure-green periphery,
+   an emerald halo behind the tube, a glossy floor of light pooling under the
+   product (behind the marquee), and a lifted corner where the sun enters. Layers
+   are listed front to back. The last few pixels return to the page colour, so the
+   hero meets the next section without a seam. The glows follow the product, which
+   is centred on desktop and phones and sits in the right column on tablets
+   (positions measured from the rendered tube at 360-1920 px). */
+.hero {
+  --halo: 24% 40% at 51% 60%;          /* behind the tube (tube centre ~50% 69%) */
+  --floor: 36% 19% at 53% 91%;         /* under the tube, behind the marquee */
+  --spread: 36% 62% at 54% 62%;
+  --vignette: 66% 82% at 52% 58%;
+  background-color: var(--forest);
+  background-image:
+    linear-gradient(180deg, rgba(3, 47, 36, 0) 95%, var(--forest) 100%),
+    radial-gradient(var(--floor), rgba(92, 186, 100, .6) 0%, rgba(40, 152, 82, .32) 42%, rgba(20, 124, 70, 0) 100%),
+    radial-gradient(var(--halo), rgba(26, 142, 80, .62) 0%, rgba(14, 112, 66, .3) 46%, rgba(14, 112, 66, 0) 100%),
+    radial-gradient(var(--spread), rgba(10, 96, 56, .5) 0%, rgba(10, 96, 56, 0) 100%),
+    radial-gradient(30% 42% at 90% 0%, rgba(70, 176, 110, .42) 0%, rgba(70, 176, 110, 0) 100%),
+    radial-gradient(var(--vignette), rgba(0, 22, 13, 0) 28%, rgba(0, 22, 13, .76) 100%),
+    linear-gradient(180deg, #022A1D 0%, #032F22 60%, #033322 100%);
+}
+@media (min-width: 760px) and (max-width: 1099px) {   /* tube centre ~76% 63%, foot ~86% */
+  .hero { --halo: 28% 34% at 76% 57%; --floor: 30% 14% at 77% 87%; --spread: 40% 55% at 74% 60%; --vignette: 80% 85% at 68% 58%; }
+}
+@media (max-width: 759px) {                           /* tube centre ~50% 67%, foot ~82% */
+  .hero { --halo: 60% 24% at 50% 63%; --floor: 72% 10% at 52% 84%; --spread: 85% 38% at 50% 66%; --vignette: 95% 62% at 50% 60%; }
+}
+.hero__title em { color: var(--lime); }
+.hero__flavour { border-color: rgba(var(--lime-rgb), .5); }
+.hero__facts strong { color: var(--lime); }
+
+/* Glossy type, as in the reference: a soft top-lit sheen inside the specified ivory
+   and lime (solid colours above stay as the fallback). The gradient lives on the
+   element that animates, so it rides with the text. The italic accent gets extra
+   paint room for its overhang, cancelled by negative margins: layout is unchanged. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero__title .intro-line {
+    background-image: linear-gradient(180deg, #FFFFFF 6%, var(--ivory) 50%, #D9D6C8 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero__title em.intro-line,
+  .hero__facts strong {
+    background-image: linear-gradient(180deg, #CDF28C 4%, var(--lime) 52%, #8FC63C 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero__title em.intro-line { padding: .12em .18em .12em .14em; margin: -.12em -.14em; }
+  .hero__title ::selection, .hero__facts ::selection { -webkit-text-fill-color: var(--forest); background: var(--lime); }
+}
+
+/* Cinematic sunlight. Two light shafts enter through the upper-right edge and
+   lean toward the product: the main shaft (::before) and a fainter secondary
+   reflection (::after). Each is a soft cross-section gradient (feathered edges),
+   faded along its length by a static mask (natural fall-off), and moves only
+   with transform and opacity, so it can run on the compositor with
+   no blur filter and no repaint. Both sit behind every hero layer (z-index 0 in
+   the isolated hero), are clipped by the hero's overflow and never take clicks.
+   The shaft is anchored at its top centre, at --sun-x along the top edge. */
+.hero {
+  --sun: 128, 232, 150;      /* light emerald: sunlight through green glass */
+  --sun-x: 93%;
+  --sun-w: 33%;
+  --sun-h: 136%;
+  --sun-rot: 46deg;
+}
+.hero::before, .hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -12%;
+  left: calc(var(--sun-x) - var(--sun-w) / 2);
+  width: var(--sun-w);
+  height: var(--sun-h);
+  transform-origin: 50% 0;
+  --beam-angle: var(--sun-rot);
+  transform: rotate(var(--beam-angle));
+  pointer-events: none;
+}
+.hero::before {
+  background: linear-gradient(90deg,
+    rgba(var(--sun), 0) 0%,
+    rgba(var(--sun), .035) 14%,
+    rgba(var(--sun), .09) 27%,
+    rgba(var(--sun), .19) 37%,
+    rgba(var(--sun), .33) 45%,
+    rgba(var(--sun), .41) 50%,
+    rgba(var(--sun), .33) 55%,
+    rgba(var(--sun), .19) 63%,
+    rgba(var(--sun), .09) 73%,
+    rgba(var(--sun), .035) 86%,
+    rgba(var(--sun), 0) 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 10%, rgba(0, 0, 0, .92) 30%, rgba(0, 0, 0, .64) 58%, rgba(0, 0, 0, .22) 82%, transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 10%, rgba(0, 0, 0, .92) 30%, rgba(0, 0, 0, .64) 58%, rgba(0, 0, 0, .22) 82%, transparent 100%);
+}
+/* Secondary reflection: narrower, steeper and further right, as if from a second pane */
+.hero::after {
+  left: calc(var(--sun-x) + var(--sun-w) * .18 - var(--sun-w) * .21);
+  width: calc(var(--sun-w) * .42);
+  height: calc(var(--sun-h) * .82);
+  --beam-angle: calc(var(--sun-rot) - 7deg);
+  background: linear-gradient(90deg,
+    rgba(var(--sun), 0) 0%,
+    rgba(var(--sun), .08) 22%,
+    rgba(var(--sun), .2) 42%,
+    rgba(var(--sun), .25) 50%,
+    rgba(var(--sun), .2) 58%,
+    rgba(var(--sun), .08) 78%,
+    rgba(var(--sun), 0) 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 12%, rgba(0, 0, 0, .55) 46%, transparent 86%);
+          mask-image: linear-gradient(180deg, transparent 0%, #000 12%, rgba(0, 0, 0, .55) 46%, transparent 86%);
+}
+
+/* Tablet: the product sits in the right column, so the light falls more steeply */
+@media (min-width: 760px) and (max-width: 1099px) {
+  .hero { --sun-x: 94%; --sun-w: 42%; --sun-h: 118%; --sun-rot: 24deg; }
+}
+/* Phone: one shaft only, steep enough to reach the product below the copy */
+@media (max-width: 759px) {
+  .hero { --sun-x: 88%; --sun-w: 74%; --sun-h: 96%; --sun-rot: 15deg; }
+  .hero::after { display: none; }
+}
+
+/* The static pose is also the loop seam. Each beam traces a different path
+   while its feathered highlights shift and change intensity. */
+@keyframes sun-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(var(--beam-angle)) scaleX(1); opacity: 1; }
+  26% { transform: translate3d(-22px, 8px, 0) rotate(calc(var(--beam-angle) + 4deg)) scaleX(1.05); opacity: .92; }
+  52% { transform: translate3d(-7px, 4px, 0) rotate(calc(var(--beam-angle) + 1deg)) scaleX(1.015); opacity: .87; }
+  76% { transform: translate3d(16px, -7px, 0) rotate(calc(var(--beam-angle) - 4deg)) scaleX(.97); opacity: .96; }
+}
+@keyframes sun-drift-2 {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(var(--beam-angle)) scaleX(1); opacity: 1; }
+  23% { transform: translate3d(15px, 7px, 0) rotate(calc(var(--beam-angle) - 3deg)) scaleX(.97); opacity: .89; }
+  48% { transform: translate3d(5px, 3px, 0) rotate(calc(var(--beam-angle) - .75deg)) scaleX(1.01); opacity: .94; }
+  74% { transform: translate3d(-14px, -5px, 0) rotate(calc(var(--beam-angle) + 3deg)) scaleX(1.04); opacity: .97; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero::before { animation: sun-drift 12s ease-in-out infinite; }
+  .hero::after { animation: sun-drift-2 17s ease-in-out .45s infinite; }
+}
+@media print { .hero::before, .hero::after { display: none; } }
+
+/* ---- Oversized scrolling lettering: white (solid in the hero, decorative elsewhere) */
+#top .marquee span { color: rgba(255, 255, 255, .25); }
+.how-marquee__track { color: rgba(255, 255, 255, .28); }     /* 04 How it works */
+/* Final CTA lettering takes up its own space before the footer. */
+.final .bigtype--final {
+  position: relative;
+  top: auto;
+  z-index: auto;
+  margin-top: clamp(20px, 3vw, 44px);
+  padding-block: .06em;
+}
+
+/* ---- 08 Comparison ----------------------------------------------------------- */
+/* The XETAFIT side used the page colour; it now does again (forest), so it reads
+   as the deeper, richer card beside the ivory one, with lime ticks. */
+.versus__side--new {
+  --fg: var(--ivory);
+  --line: rgba(var(--ivory-rgb), .2);
+  --accent: var(--lime);
+  --on-accent: var(--forest);
+  color: var(--ivory);
+  background: transparent;
+}
+.versus__vs { --vs-ring: var(--forest); box-shadow: 0 0 0 7px var(--vs-ring); }
+@media (min-width: 760px) { .versus__vs { box-shadow: 0 0 0 9px var(--vs-ring); } }
+
+/* Reviews on white. Keep the card and carousel geometry and their states. */
+#reviews.reviews { color: var(--fg); }
+#reviews.reviews::before { background: #fff; }
+#reviews .sec-head .lead,
+#reviews .feedback-source-note { color: var(--soft); }
+#reviews .sec-head .lead a,
+#reviews .feedback-summary__link,
+#reviews .feedback-editorial h3,
+#reviews .feedback-carousel__dot { color: var(--fg); }
+#reviews .feedback-summary {
+  background: transparent;
+  border-color: var(--line);
+}
+#reviews .feedback-stars { color: rgba(var(--color-contrast-rgb), .25); }
+#reviews .feedback-summary__score strong,
+#reviews .feedback-stars__fill,
+#reviews .feedback-editorial__mark,
+#reviews .feedback-carousel__dot[aria-pressed=true] { color: var(--emerald); }
+#reviews .feedback-card, #reviews .feedback-carousel__arrow {
+  background: #fff;
+  border-color: var(--line);
+}
+#reviews .feedback-carousel__arrow:hover:not(:disabled) {
+  background: var(--lime);
+  border-color: var(--emerald);
+  color: var(--forest);
+}
+#reviews .feedback-carousel__arrow:focus-visible,
+#reviews .feedback-carousel__dot:focus-visible,
+#reviews .feedback-carousel:focus-visible { outline-color: var(--focus); }

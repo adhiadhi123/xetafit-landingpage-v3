@@ -2,19 +2,17 @@
    Visual reference: the hero marquee (style.css .marquee), which is left untouched.
    Scroll-linked, never looping: scrolling down moves it right-to-left, scrolling up
    reverses it, and it rests wherever the scroll rests. Decorative only (aria-hidden,
-   no pointer events). The band sits absolutely on the lower edge of the cards, so it
-   adds no height; its upper third tucks behind the cards and the rest shows in the
-   green space below them. Fallback for browsers without scroll-driven animations:
-   how-marquee.js (same mapping). */
+   no pointer events). The band is centered on the card grid. */
+.how-steps { position: relative; }
+
 .how-marquee {
   --how-type: clamp(76px, 12.5vw, 184px);   /* hero marquee scale */
   --how-travel: clamp(200px, 26vw, 380px);   /* horizontal travel over the passage */
-  --how-note: 22px;                          /* height of the note under the cards (one line) */
   position: absolute;
   z-index: -1;                               /* behind heading, cards and note (.sec isolates) */
-  inset-inline: 0;
-  /* card bottom = section padding + note margin + note; the band rises a third above it */
-  bottom: calc(var(--pad-y) + clamp(28px, 4vw, 44px) + var(--how-note) - var(--how-type) * .55);
+  inset-inline: calc(50% - 50vw);
+  top: 50%;
+  translate: 0 -50%;
   height: calc(var(--how-type) * .84);
   overflow: clip;                            /* clip, not hidden: no scroll container, view() keeps working */
   pointer-events: none;
@@ -34,7 +32,6 @@
   will-change: transform;
 }
 .how-marquee__track span { flex: none; padding-right: .3em; }
-@media (max-width: 485.98px) { .how-marquee { --how-note: 44px; } }   /* the note wraps to two lines */
 
 @keyframes how-marquee-scroll {
   from { transform: translate3d(0, 0, 0); }
