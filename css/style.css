@@ -558,7 +558,7 @@ strong { font-weight: 700; }
 }
 .hdr__cta svg { width: 14px; height: 14px; transition: translate var(--dur-hover) var(--ease); }
 .hdr__cta:hover { background: var(--color-primary); translate: 0 -1px; }
-.hdr__cta[href="#buy"]:hover { background-color: var(--ember-2); color: var(--color-secondary); }
+.hdr__cta[href="#buy"] { background-color: var(--ember-2); color: var(--color-secondary); }
 .hdr__cta:hover svg { translate: 3px 0; }
 
 /* Phone / tablet menu: shown while #menu is the URL target */
