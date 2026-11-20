@@ -110,6 +110,27 @@ html:has(body:not(.cert-page)) { --page-green: var(--forest); }
 .site-footer__brand { background: var(--forest); }   /* Keep the original logo legible on white. */
 
 
+/* The white edge enters with normal scrolling and continues behind Product's
+   rounded top corners so the two sections read as one continuous surface. */
+#switch {
+  background: #fff;
+  box-shadow: 0 var(--r-panel) #fff;
+}
+#switch, #switch .panel--burgundy {
+  --fg: #173D2B;
+  --head: var(--fg);
+  --em: var(--fg);
+  --accent: var(--fg);
+}
+#switch .switch-pair figure {
+  background: transparent;
+  color: var(--fg);
+}
+#switch .checks svg {
+  background: rgba(23, 61, 43, .1);
+  color: var(--fg);
+}
+
 /* Full-width section colors with the existing content wrappers and panel radii. */
 #buy, #benefits, #benefits .panel--burgundy, #lifestyle,
 #reviews.reviews, #faq, #faq .panel--cream {
